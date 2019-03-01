@@ -31,6 +31,7 @@ This is originally form [Cloudposse's module] (https://github.com/cloudposse/ter
 | Name | Description |
 |------|-------------|
 | exec\_role\_arn | ECS Exec role ARN |
+| exec\_role\_name | ECS Exec role name |
 | service\_name | ECS Service name |
 | service\_role\_arn | ECS Service role ARN |
 | service\_security\_group\_id | Security Group ID of the ECS task |
