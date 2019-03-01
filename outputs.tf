@@ -13,6 +13,11 @@ output "task_role_arn" {
   value       = "${aws_iam_role.ecs_task.arn}"
 }
 
+output "exec_role_arn" {
+  description = "ECS Exec role ARN"
+  value       = "${aws_iam_role.ecs_exec.arn}"
+}
+
 output "service_security_group_id" {
   description = "Security Group ID of the ECS task"
   value       = "${aws_security_group.ecs_service.id}"
