@@ -1,36 +1,36 @@
 variable "name" {
-  type        = "string"
+  type        = string
   description = "Solution name, e.g. 'app' or 'cluster'"
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   default     = {}
   description = "Additional tags (e.g. `map('BusinessUnit`,`XYZ`)"
 }
 
 variable "vpc_id" {
-  type        = "string"
+  type        = string
   description = "The VPC ID where resources are created"
 }
 
 variable "alb_target_group_arn" {
-  type        = "string"
+  type        = string
   description = "The ALB target group ARN for the ECS service"
 }
 
 variable "ecs_cluster_arn" {
-  type        = "string"
+  type        = string
   description = "The ARN of the ECS cluster where service will be provisioned"
 }
 
 variable "container_definition_json" {
-  type        = "string"
+  type        = string
   description = "The JSON of the task container definition"
 }
 
 variable "container_name" {
-  type        = "string"
+  type        = string
   description = "The name of the container in task definition to associate with the load balancer"
 }
 
@@ -41,22 +41,22 @@ variable "container_port" {
 
 variable "private_subnet_ids" {
   description = "Private subnet IDs"
-  type        = "list"
+  type        = list(string)
 }
 
 variable "security_group_ids" {
   description = "Security group IDs to allow in Service network_configuration"
-  type        = "list"
+  type        = list(string)
 }
 
 variable "launch_type" {
-  type        = "string"
+  type        = string
   description = "The launch type on which to run your service. Valid values are EC2 and FARGATE"
   default     = "FARGATE"
 }
 
 variable "network_mode" {
-  type        = "string"
+  type        = string
   description = "The network mode to use for the task. This is required to be awsvpc for FARGATE `launch_type`"
   default     = "awsvpc"
 }
@@ -85,3 +85,4 @@ variable "deployment_minimum_healthy_percent" {
   description = "The lower limit (as a percentage of `desired_count`) of the number of tasks that must remain running and healthy in a service during a deployment"
   default     = 100
 }
+
